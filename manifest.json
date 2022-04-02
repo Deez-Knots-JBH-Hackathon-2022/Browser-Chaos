@@ -9,8 +9,16 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["https://en.wikipedia.org/wiki/Xkcd"],
+			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
 			"js": ["wikipedia/xkcd.js"]
+		},
+		{
+			"matches": ["https://*.wikipedia.org/wiki/Twitter"],
+			"js": ["wikipedia/twitter.js"]
+		},
+		{
+			"matches": ["https://twitter.com/"],
+			"js": ["twitter/home"]
 		}
 	]
 }
