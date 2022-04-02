@@ -14,7 +14,10 @@
 		},
 		{
 			"matches": ["<all_urls>"],
-			"js": ["/page-injector.js"]
+			"js": ["/page-injector.js"],
+			"exclude_matches": [
+				"https://twitter.com/"
+			]
 		},
 		{
 			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
