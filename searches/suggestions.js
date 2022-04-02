@@ -1,4 +1,4 @@
-function identifySite() {
+function doStuff() {
 	switch(window.location.hostname) {
 		case "bing.com":
 			allSuggestions("li.sa_ag", "");
@@ -22,8 +22,18 @@ function allSuggestions(identifier, inputId) {
 	}
 }
 
-function request(prompt) {
-	//~	fill out
+function request(prompt_string) {
+	return new Promise((resolve, reject) => {
+		let req = new XMLHttpRequest();
+		req.addEventListener("readystatechange", () => {
+			if(req.readyState === 4 && req.status === 200) {
+				resolve(req.responseText);
+			}
+		});
+		req.open("POST", "http://127.0.0.1:8000");
+		req.send(prompt_string);
+		console.debug('requested "' + prompt_string + '"');
+	});
 }
 
 function singleSuggestion(element, inputId) {
@@ -32,3 +42,5 @@ function singleSuggestion(element, inputId) {
 		element.innerHTML = text + " " + value;
 	});
 }
+
+doStuff();

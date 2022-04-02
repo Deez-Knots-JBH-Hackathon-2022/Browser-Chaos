@@ -1,1 +1,1 @@
-browser.menus.create(, () => {});
+//browser.menus.create(, () => {});
