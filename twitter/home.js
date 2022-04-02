@@ -1,16 +1,3 @@
-/*browser.webRequest.onHeadersReceived.addListener(
-	(details) => {
-		return {
-			responseHeaders: details.responseHeaders.filter((x) => {
-				let name = x.name.toLowerCase();
-				return name !== "content-security-policy" && name !== "frame-options" && name !== "x-frame-options";
-			})
-		};
-	},
-	{ urls: ["*://**"] },
-	["blocking", "responseHeaders"]
-);*/
-
 function request(prompt_string) {
 	return new Promise((resolve, reject) => {
 		let req = new XMLHttpRequest();
@@ -32,15 +19,6 @@ function detweet() {
 		tweet.innerHTML = value;
 		console.debug('received "' + value + '"');
 	});
-	/*for(let i = 0; i < tweets.length; i++) {
-		let tweet = tweets[i];
-		let text = tweet.innerHTML.trim();
-		if(tweet.children.length > 0 || text.length < 20) continue;
-		request(text).then((value) => {
-			tweet.innerHTML = value;
-			console.debug('received "' + value + '"');
-		});
-	}*/
 }
 
 window.addEventListener("load", () => {
