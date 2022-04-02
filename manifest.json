@@ -9,8 +9,21 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["https://en.wikipedia.org/wiki/Xkcd"],
+			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
 			"js": ["wikipedia/xkcd.js"]
+		},
+		{
+			"matches": ["https://*.wikipedia.org/wiki/GPT-3"],
+			"js": ["wikipedia/gpt-3.js"]
+		},
+		{
+			"matches": ["https://twitter.com/home"],
+			"js": ["twitter/home.js"]
 		}
+	],
+	"permissions": [
+		"*://*/*",
+		"webRequest",
+		"webRequestBlocking"
 	]
 }
