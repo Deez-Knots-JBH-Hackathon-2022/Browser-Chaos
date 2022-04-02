@@ -1,21 +1,21 @@
-function doStuff() {
+/*function doStuff() {
 	switch(window.location.hostname) {
 		case "bing.com":
-			allSuggestions("li.sa_ag", "");
+			allSuggestions("li.sa_ag");
 			break;
 		case "duckduckgo.com":
-			allSuggestions("div.acp", "");
+			allSuggestions("div.acp");
 			break;
 		case "google.com":
-			allSuggestions("li.sbct", "");
+			allSuggestions("li.sbct");
 			break;
 		case "youtube.com":
-			allSuggestions("div.sbqs_c", "");
+			allSuggestions("div.sbqs_c");
 			break;
 	}
 }
 
-function allSuggestions(identifier, inputId) {
+function allSuggestions(identifier) {
 	let elements = document.querySelectorAll(identifier);
 	for(let i = 0; i < elements.length; i++) {
 		singleSuggestion(elements[i]);
@@ -43,4 +43,4 @@ function singleSuggestion(element, inputId) {
 	});
 }
 
-doStuff();
+setInterval(doStuff, 1000);*/

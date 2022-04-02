@@ -9,11 +9,11 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
-			"js": ["feature.js", "all/dyslexia.js", "all/invert img.js"]
+			"js": ["feature.js", "all/invert img.js"]
 		},
 		{
 			"matches": ["<all_urls>"],
-			"js": ["page-injector.js"],
+			"js": ["page-injector.js", "all/dyslexia.js"],
 			"exclude_matches": [
 				"https://twitter.com/*"
 			]
