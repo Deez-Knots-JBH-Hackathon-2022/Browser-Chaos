@@ -21,10 +21,16 @@
                 </div>
             </marquee>
         </marquee>
-        <label>
-            Sanity Meter
-            <input type="range" min="0" max="100" value="0" width="100">
-        </label>
+        <div>
+            <label>
+                Sanity Meter
+                <input id="sanity" type="range" min="0" max="100" value="0" width="100">
+            </label>
+            <label display="block">
+                Improve Perspective
+                <input type="range" min="0" max="100" rotation="0" width="100">
+            </label>
+        </div>
         <script src="/popup.js"></script>
     </body>
 </html>

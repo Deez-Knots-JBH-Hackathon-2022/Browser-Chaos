@@ -20,6 +20,12 @@
     }
 }
 
+@keyframes whirlOut {
+    to {
+        transform: scale(0) rotateZ(1260deg);
+       }
+    }
+
 @keyframes textButton {
     0% {
         font-size: 30px;
