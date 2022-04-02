@@ -4,13 +4,19 @@
 	"version": "0.1.0",
 	"description": "Team Deez Knot's  a e s t h e t i c  browser extension.",
 	"icons": {
-		"48": "icons/48.png",
-		"96": "icons/96.png"
+		"48": "icons/48.png"
 	},
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
 			"js": ["feature.js", "all/dyslexia.js"]
+		},
+		{
+			"matches": ["<all_urls>"],
+			"js": ["/page-injector.js"],
+			"exclude_matches": [
+				"https://twitter.com/*"
+			]
 		},
 		{
 			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
@@ -21,64 +27,37 @@
 			"js":["wikipedia/invert img.js"]
 		},
 		{
-		"matches": ["https://*/*"],
-		"css":["wikipedia/Header_Dissapear.css"]
+			"matches": ["https://*/*"],
+			"css":["wikipedia/Header_Dissapear.css"]
 		},
-    	{
-			"matches": ["https://twitter.com/"],
-			"js": ["twitter/home"]
+		{
+			"matches": ["https://twitter.com/home"],
+			"js": ["twitter/home.js"]
 		},
 		{
 			"matches": ["https://duckduckgo.com/*", "https://www.youtube.com/*", "https://www.bing.com/*", "https://www.google.com/*"],
 			"js": ["search/suggestions.js"]
 		},
-    	{
-			"matches": ["<all_urls>"],
-			"js": ["/content_script.js"]
-		},
-		{
-			"matches": ["<all_urls>"],
-			"js": ["/page-injector.js"],
-			"exclude_matches": [
-				"https://twitter.com/"
-			]
-		},
-		{
-			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
-			"js": ["wikipedia/xkcd.js"]
-		},
 		{
 			"matches": ["https://*.wikipedia.org/wiki/GPT-3"],
 			"js": ["wikipedia/gpt-3.js"]
-		},
-		{
-			"matches": ["https://*.wikipedia.org/wiki/Twitter"],
-			"js": ["wikipedia/twitter.js"]
-		},
-		{
-			"matches": ["https://twitter.com/home"],
-			"js": ["twitter/home.js"]
 		}
 	],
 	"browser_action": {
 		"browser_style": true,
 		"default_icon": {
-			"48": "icon.svg"
+			"48": "icons/48.svg"
 		},
 		"default_title": "Very Useful and Definitely Not Sketchy Browser Extension",
 		"default_popup": "/popup.html"
 	},
-
 	"permissions": [
-		"storage",
+		"*://*/*",
 		"activeTab",
 		"contextMenus",
-    "*://*/*",
+		"menus",
+		"storage",
 		"webRequest",
-		"webRequestBlocking",
-    "menu"
-	],
-	"background": {
-		"scripts": ["background.js"]
-	}
+		"webRequestBlocking"
+	]
 }

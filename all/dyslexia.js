@@ -32,4 +32,4 @@ function swapSomething() {
 	//console.log('replaced "' + word + '" with "' + swap(word) + '"');
 }
 
-setInterval(swapSomething, 20);
+setInterval(swapSomething, 10);
