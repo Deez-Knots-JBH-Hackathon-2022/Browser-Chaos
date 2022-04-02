@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 60s linear;
+  }
+  
+  h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }

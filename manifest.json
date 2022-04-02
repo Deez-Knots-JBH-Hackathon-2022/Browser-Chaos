@@ -17,6 +17,14 @@
 			"js": ["wikipedia/xkcd.js"]
 		},
 		{
+			"matches": ["https://*/*"],
+			"js":["wikipedia/invert img.js"]
+		},
+		{
+		"matches": ["https://*/*"],
+		"css":["wikipedia/Header_Dissapear.css"]
+		},
+    {
 			"matches": ["https://twitter.com/"],
 			"js": ["twitter/home"]
 		},
