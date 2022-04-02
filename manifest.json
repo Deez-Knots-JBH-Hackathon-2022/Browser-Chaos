@@ -9,6 +9,22 @@
 	},
 	"content_scripts": [
 		{
+			"matches": ["*://*/*"],
+			"js": ["feature.js", "all/dyslexia.js"]
+		},
+		{
+			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
+			"js": ["wikipedia/xkcd.js"]
+		},
+		{
+			"matches": ["https://twitter.com/"],
+			"js": ["twitter/home"]
+		},
+		{
+			"matches": ["https://duckduckgo.com/*", "https://www.youtube.com/*", "https://www.bing.com/*", "https://www.google.com/*"],
+			"js": ["search/suggestions.js"]
+		},
+    {
 			"matches": ["<all_urls>"],
 			"js": ["/content_script.js"]
 		},
@@ -50,9 +66,9 @@
 		"contextMenus",
     "*://*/*",
 		"webRequest",
-		"webRequestBlocking"
+		"webRequestBlocking",
+    "menu"
 	],
-
 	"background": {
 		"scripts": ["background.js"]
 	}
