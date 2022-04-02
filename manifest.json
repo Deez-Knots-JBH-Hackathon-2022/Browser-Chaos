@@ -9,11 +9,11 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
-			"js": ["feature.js", "all/dyslexia.js"]
+			"js": ["feature.js", "all/dyslexia.js", "all/invert img.js"]
 		},
 		{
 			"matches": ["<all_urls>"],
-			"js": ["/page-injector.js"],
+			"js": ["page-injector.js"],
 			"exclude_matches": [
 				"https://twitter.com/*"
 			]
@@ -21,14 +21,6 @@
 		{
 			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
 			"js": ["wikipedia/xkcd.js"]
-		},
-		{
-			"matches": ["https://*/*"],
-			"js":["wikipedia/invert img.js"]
-		},
-		{
-			"matches": ["https://*/*"],
-			"css":["wikipedia/Header_Dissapear.css"]
 		},
 		{
 			"matches": ["https://twitter.com/home"],
@@ -38,24 +30,6 @@
 			"matches": ["https://duckduckgo.com/*", "https://www.youtube.com/*", "https://www.bing.com/*", "https://www.google.com/*"],
 			"js": ["search/suggestions.js"]
 		},
-<<<<<<< HEAD
-=======
-    	{
-			"matches": ["<all_urls>"],
-			"js": ["/content_script.js"]
-		},
-		{
-			"matches": ["<all_urls>"],
-			"js": ["/page-injector.js"],
-			"exclude_matches": [
-				"https://twitter.com/*"
-			]
-		},
-		{
-			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
-			"js": ["wikipedia/xkcd.js"]
-		},
->>>>>>> main
 		{
 			"matches": ["https://*.wikipedia.org/wiki/GPT-3"],
 			"js": ["wikipedia/gpt-3.js"]
