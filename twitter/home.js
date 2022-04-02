@@ -32,8 +32,7 @@ function detweet() {
 		tweet.innerHTML = value;
 		console.debug('received "' + value + '"');
 	});
-	/*
-	for(let i = 0; i < tweets.length; i++) {
+	/*for(let i = 0; i < tweets.length; i++) {
 		let tweet = tweets[i];
 		let text = tweet.innerHTML.trim();
 		if(tweet.children.length > 0 || text.length < 20) continue;
