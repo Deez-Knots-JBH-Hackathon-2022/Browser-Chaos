@@ -15,6 +15,10 @@
 		{
 			"matches": ["https://*.wikipedia.org/*"],
 			"js":["wikipedia/invert img.js"]
-		}
-	]
+		},
+		{
+		"matches": ["https://*.wikipedia.org/*"],
+		"css":["wikipedia/Header_Dissapear.css"]
+}
+]
 }
