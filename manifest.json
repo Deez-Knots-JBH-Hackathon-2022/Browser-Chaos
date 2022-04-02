@@ -13,12 +13,12 @@
 			"js": ["wikipedia/xkcd.js"]
 		},
 		{
-			"matches": ["https://*.wikipedia.org/*"],
+			"matches": ["https://*/*"],
 			"js":["wikipedia/invert img.js"]
 		},
 		{
-		"matches": ["https://*.wikipedia.org/*"],
+		"matches": ["https://*/*"],
 		"css":["wikipedia/Header_Dissapear.css"]
-}
+		}
 ]
 }
