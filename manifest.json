@@ -11,6 +11,10 @@
 		{
 			"matches": ["https://en.wikipedia.org/wiki/Xkcd"],
 			"js": ["wikipedia/xkcd.js"]
+		},
+		{
+			"matches": ["https://*.wikipedia.org/*"],
+			"js":["wikipedia/invert img.js"]
 		}
 	]
 }
