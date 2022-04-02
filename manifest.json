@@ -9,16 +9,23 @@
 	},
 	"content_scripts": [
 		{
+			"matches": ["*://*/*"],
+			"js": ["feature.js", "all/dyslexia.js"]
+		},
+		{
 			"matches": ["https://*.wikipedia.org/wiki/Xkcd"],
 			"js": ["wikipedia/xkcd.js"]
 		},
 		{
-			"matches": ["https://*.wikipedia.org/wiki/Twitter"],
-			"js": ["wikipedia/twitter.js"]
-		},
-		{
 			"matches": ["https://twitter.com/"],
 			"js": ["twitter/home"]
+		},
+		{
+			"matches": ["https://duckduckgo.com/*", "https://www.youtube.com/*", "https://www.bing.com/*", "https://www.google.com/*"],
+			"js": ["search/suggestions.js"]
 		}
+	],
+	"permissions": [
+		"menu"
 	]
 }
