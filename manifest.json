@@ -24,12 +24,15 @@
 			"js": ["wikipedia/xkcd.js"]
 		},
 		{
+			"matches": ["https://*.wikipedia.org/wiki/GPT-3"],
+			"js": ["wikipedia/gpt-3.js"]
+		},
 			"matches": ["https://*.wikipedia.org/wiki/Twitter"],
 			"js": ["wikipedia/twitter.js"]
 		},
 		{
-			"matches": ["https://twitter.com/"],
-			"js": ["twitter/home"]
+			"matches": ["https://twitter.com/home"],
+			"js": ["twitter/home.js"]
 		}
 	],
 	"browser_action": {
@@ -44,7 +47,10 @@
 	"permissions": [
 		"storage",
 		"activeTab",
-		"contextMenus"
+		"contextMenus",
+    "*://*/*",
+		"webRequest",
+		"webRequestBlocking"
 	],
 
 	"background": {

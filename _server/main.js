@@ -12,28 +12,38 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 //openai stuff
+const TOKEN_COUNT = 50;
 const config = new Configuration({
 	organization: ORG_ID,
 	apiKey: API_KEY
 });
 const openai = new OpenAIApi(config);
-async function test() {
+async function prompt_ai(prompt_string) {
 	let responses = (await openai.createCompletion("text-davinci-002", {
-		prompt: "talk about the weather",
-		max_tokens: 50
+		prompt: prompt_string,
+		max_tokens: TOKEN_COUNT
 	})).data.choices;
-	for(let i = 0; i < responses.length; i++) {
-		console.log(responses[i].text.trim());
-	}
+	return responses.map(x => x.text.trim()).filter(x => x.length > 0 && x.length <= 200);
 }
-for(let i = 0; i < 10; i++) {
-	test();
-}
+
 
 //request listener / responder
 const requestListener = (req, res) => {
-	res.writeHead(200);
-	res.end(`bruh lmao (${i++})`);
+	let data = "";
+	req.on("data", (chunk) => {
+		data += chunk.toString();
+	});
+	req.on("end", async () => {
+		console.log(`received prompt: "${data}"`);
+		let responses = await prompt_ai(data);
+		let response = responses[Math.floor(Math.random() * responses.length)];
+		res.writeHead(200, {
+			"Access-Control-Allow-Origin": "*",
+			"Content-Type": "text/plain"
+		});
+		res.end(response);
+		console.log(`responded with: "${response}"`);
+	});
 };
 
 
