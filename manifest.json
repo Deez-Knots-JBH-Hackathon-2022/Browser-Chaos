@@ -1,0 +1,16 @@
+{
+	"manifest_version": 2,
+	"name": "Very Useful and Definitely Not Sketchy Browser Extension",
+	"version": "0.1.0",
+	"description": "Team Deez Knot's  a e s t h e t i c  browser extension.",
+	"icons": {
+		"48": "icons/48.png",
+		"96": "icons/96.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://en.wikipedia.org/wiki/Xkcd"],
+			"js": ["wikipedia/xkcd.js"]
+		}
+	]
+}
