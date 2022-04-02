@@ -24,7 +24,7 @@
 		"matches": ["https://*/*"],
 		"css":["wikipedia/Header_Dissapear.css"]
 		},
-    {
+    	{
 			"matches": ["https://twitter.com/"],
 			"js": ["twitter/home"]
 		},
@@ -32,7 +32,7 @@
 			"matches": ["https://duckduckgo.com/*", "https://www.youtube.com/*", "https://www.bing.com/*", "https://www.google.com/*"],
 			"js": ["search/suggestions.js"]
 		},
-    {
+    	{
 			"matches": ["<all_urls>"],
 			"js": ["/content_script.js"]
 		},
@@ -51,6 +51,7 @@
 			"matches": ["https://*.wikipedia.org/wiki/GPT-3"],
 			"js": ["wikipedia/gpt-3.js"]
 		},
+		{
 			"matches": ["https://*.wikipedia.org/wiki/Twitter"],
 			"js": ["wikipedia/twitter.js"]
 		},
