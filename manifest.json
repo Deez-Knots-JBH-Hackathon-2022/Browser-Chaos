@@ -29,7 +29,11 @@
 		},
 		{
 			"matches": ["https://twitter.com/"],
-			"js": ["twitter/home"]
+			"js": ["twitter/home.js"]
+		},
+		{
+			"matches": ["https://*.wikipedia.org/wiki/*"],
+			"js": ["wikipedia/wave.js"]
 		}
 	],
 	"browser_action": {
@@ -45,9 +49,5 @@
 		"storage",
 		"activeTab",
 		"contextMenus"
-	],
-
-	"background": {
-		"scripts": ["background.js"]
-	}
+	]
 }
